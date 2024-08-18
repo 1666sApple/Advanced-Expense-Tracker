@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tailwind build expense/static/expense/src.css -o expense/static/expense/styles.css"
+    "build": "tailwind build -i expense/static/expense/src.css -o expense/static/expense/styles.css"
   },
   "repository": {
     "type": "git",

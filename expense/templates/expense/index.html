@@ -1,3 +1,49 @@
 {% extends "expense/base.html" %} {% block body %}
-<strong>This is the index page</strong>
+<div class="flex justify-center items-center min-h-screen">
+  <form
+    class="shadow-lg rounded-lg p-10 bg-white w-full max-w-4xl"
+    method="post"
+  >
+    {% csrf_token %}
+    <div class="form-container flex flex-col md:flex-row md:items-end gap-4">
+      <!-- Expense Name -->
+      <div id="form-name" class="flex-1">
+        <label
+          for="{{ expense_form.name.id_for_label }}"
+          class="block mb-2 font-semibold"
+          >Expense Name</label
+        >
+        <div class="border rounded-lg px-3 py-2">{{ expense_form.name }}</div>
+      </div>
+      <!-- Amount -->
+      <div id="form-amount" class="flex-1">
+        <label
+          for="{{ expense_form.amount.id_for_label }}"
+          class="block mb-2 font-semibold"
+          >Amount</label
+        >
+        <div class="border rounded-lg px-3 py-2">{{ expense_form.amount }}</div>
+      </div>
+      <!-- Category -->
+      <div id="form-category" class="flex-1">
+        <label
+          for="{{ expense_form.category.id_for_label }}"
+          class="block mb-2 font-semibold"
+          >Category</label
+        >
+        <div class="border rounded-lg px-3 py-2">
+          {{ expense_form.category }}
+        </div>
+      </div>
+      <!-- Add Button -->
+      <div class="flex-none">
+        <button
+          class="bg-green-500 hover:bg-red-500 text-white font-bold py-2 px-4 rounded-lg"
+        >
+          Add
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
 {% endblock %}
