@@ -1,4 +1,5 @@
 {% extends "expense/base.html" %}
+
 {% block body %}
 <div class="flex justify-center items-center min-h-screen bg-gray-100">
   <form class="shadow-lg rounded-lg p-10 bg-white w-full max-w-3xl" method="post">
@@ -54,5 +55,40 @@
       </div>
     </div>
   </form>
+
+  <div>
+    <div class="space-x-25">Expenses:</div>
+    <div class="shadow-lg m-12 rounded-lg">
+        <div class="expense -header flex flex-wrap space-x-20 font-bold">
+          <span>Name</span>
+          <span>Category</span>
+          <span>Amount</span>
+          <span>Price</span>
+          <span>Date</span>
+          <span></span>
+          <span></span>
+        </div>    
+    </div>
+
+    <hr class="10">
+    
+    {% for expense in expenses %}
+      <div class="expense-row flex-wrap px-20 py-5">
+        <span>{{ expense.name }}</span>
+        <span>{{ expense.category }}</span>
+        <span>{{ expense.amount }}</span>
+        <span>{{ expense.price }}</span>
+        <span>{{ expense.date }}</span>
+        <span><a href="{% url 'edit' expense.id %}">Edit</a></span>
+        <span><form method="post" action="{% url 'delete' expense.id %}">
+                {% csrf_token %}
+                <button type="submit">
+                    Delete
+                </button>
+            </form>
+        </span>
+      </div>
+    {% endfor %}
+  </div>
 </div>
 {% endblock %}
