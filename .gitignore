@@ -239,3 +239,4 @@ jspm_packages/
 
 # Tailwind JIT cache
 .tailwindcache/
+expense/static/expense/styles.css
