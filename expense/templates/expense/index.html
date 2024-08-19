@@ -7,30 +7,39 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <!-- Expense Name -->
         <div id="form-name" class="flex flex-col">
-          <label
-            for="{{ expense_form.name.id_for_label }}"
-            class="block mb-2 font-semibold"
-          >Expense Name</label>
+          <label for="{{ expense_form.name.id_for_label }}" class="block mb-2 font-semibold">
+            Expense Name
+          </label>
           <div class="border rounded-lg px-3 py-2">
             {{ expense_form.name }}
           </div>
         </div>
+
         <!-- Amount -->
         <div id="form-amount" class="flex flex-col">
-          <label
-            for="{{ expense_form.amount.id_for_label }}"
-            class="block mb-2 font-semibold"
-          >Amount</label>
+          <label for="{{ expense_form.amount.id_for_label }}" class="block mb-2 font-semibold">
+            Amount
+          </label>
           <div class="border rounded-lg px-3 py-2">
             {{ expense_form.amount }}
           </div>
         </div>
+
+        <!-- Price -->
+        <div id="form-price" class="flex flex-col">
+          <label for="{{ expense_form.price.id_for_label }}" class="block mb-2 font-semibold">
+            Price
+          </label>
+          <div class="border rounded-lg px-3 py-2">
+            {{ expense_form.price }}
+          </div>
+        </div>
+
         <!-- Category -->
         <div id="form-category" class="flex flex-col">
-          <label
-            for="{{ expense_form.category.id_for_label }}"
-            class="block mb-2 font-semibold"
-          >Category</label>
+          <label for="{{ expense_form.category.id_for_label }}" class="block mb-2 font-semibold">
+            Category
+          </label>
           <div class="border rounded-lg px-3 py-2">
             {{ expense_form.category }}
           </div>
@@ -39,9 +48,7 @@
 
       <!-- Adding space above the button -->
       <div class="mt-6 flex justify-end">
-        <button
-          class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-lg"
-        >
+        <button type="submit" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-lg transition duration-200 ease-in-out">
           Add
         </button>
       </div>
